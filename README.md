@@ -13,5 +13,11 @@ If you are developing a production application, we recommend using TypeScript an
 
 
 
+
+DIRECCIÓN WEB DONDE ESTÁ CORRIENTE EL Trabajo Final React:  https://capitalgestionrrhh.netlify.app/
+Para inicio en host por comando del proyecto frontend, posicionarse en la raiz y ejecutar "npm run dev".
+
 DIRECCIÓN WEB DONDE ESTÁ CORRIENTE EL Trabajo Final Backend: https://proyectofinabackend-waltermarchioli.onrender.com/api/agentes
-DIRECCIÓN WEB DONDE ESTÁ CORRIENTE EL Trabajo Final React:  
+Para inicio en host por comando del proyecto backend, posicionarse en la raiz y ejecutar "npm app.mjs"
+
+Desde la siguiente dirección web se cosume la api, usando el mismo servicio en Render: https://proyectofinabackend-waltermarchioli.onrender.com/api/ext/agentes/
