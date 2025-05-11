@@ -16,6 +16,10 @@ If you are developing a production application, we recommend using TypeScript an
 
 DIRECCIÓN WEB DONDE ESTÁ CORRIENTE EL Trabajo Final React:  https://capitalgestionrrhh.netlify.app/
 Para inicio en host por comando del proyecto frontend, posicionarse en la raiz y ejecutar "npm run dev".
+Roles: 
+Administrador: ver, crear, editar y eliminar.
+Editor: ver y crear
+Registrar un usuario: ver
 
 DIRECCIÓN WEB DONDE ESTÁ CORRIENTE EL Trabajo Final Backend: https://proyectofinabackend-waltermarchioli.onrender.com/api/agentes
 Para inicio en host por comando del proyecto backend, posicionarse en la raiz y ejecutar "npm app.mjs"
