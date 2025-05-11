@@ -7,28 +7,75 @@ import ProfileSelector from '../components/ProfileSelector'
 import ProfileDetail from '../components/ProfileDetail'
 import ProfileCreate from '../components/ProfileCreate'
 import ProfileEdit from '../components/ProfileEdit'
+import Login from '../components/Login' 
+import Register from '../components/Register'
+import PrivateRoute from '../components/PrivateRoute'
 
 const AppRouter = () => {
   const navigate = useNavigate()
   return (
     <>
       <Routes>
-        <Route path='/' element={<Home />} />
+        <Route path='/' element={<Navigate to="/login" />} /> 
+        <Route path='/login' element={<Login />} /> 
+        <Route path='/register' element={<Register />} />
         
+        <Route
+          path='/list'
+          element={
+            <PrivateRoute>
+              <Home />
+            </PrivateRoute>
+          }
+        />
 
-        {/* rutas anidadas  */}
-        <Route path="/nested-route" element={<Dashboard />}>
+        {/* rutas anidadas */}
+        <Route
+          path="/nested-route"
+          element={
+            <PrivateRoute>
+              <Dashboard />
+            </PrivateRoute>
+          }
+        >
           <Route path="users" element={<p className="text-white">Users 🧑🏻‍💻</p>} />
           <Route path="settings" element={<p className="text-white">Settings ⚙️</p>} />
         </Route>
 
-        {/* rutas dinámicas  */}
-        <Route path='/profiles' element={<ProfileSelector />} />
-        <Route path='/profiles/:id' element={<ProfileDetail />} />
-        <Route path='/profiles/create-profile' element={<ProfileCreate />} />
-        <Route path='/profiles/:id/edit' element={<ProfileEdit />} />
+        {/* rutas dinámicas protegidas */}
+        <Route
+          path='/profiles'
+          element={
+            <PrivateRoute>
+              <ProfileSelector />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path='/profiles/:id'
+          element={
+            <PrivateRoute>
+              <ProfileDetail />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path='/profiles/create-profile'
+          element={
+            <PrivateRoute>
+              <ProfileCreate />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path='/profiles/:id/edit'
+          element={
+            <PrivateRoute>
+              <ProfileEdit />
+            </PrivateRoute>
+          }
+        />
 
-        {/* ruta no encontrada  - path="*" */}
         <Route path="/not-found" element={<NotFound />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
